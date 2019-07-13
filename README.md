@@ -2,7 +2,7 @@
 
 ![Ship Visualization](./images/ship_viz.gif)
 
-Recently I participated in Analytics Vidhya's Game of Deep Learning Hackathon. The aim was to build a model that is able to classify ship type using only the images taken by the survey boats. 
+In this repo I attempt to build a model that is able to classify ship type using only the images taken by the survey boats. 
 Ship classification has as a wide range of applications, particularly in the areas of maritime safety,  fisheries management, marine pollution,  protection from piracy etc.
 
 There are 5 classes of ships to be detected.
@@ -15,7 +15,8 @@ There are 5 classes of ships to be detected.
 | Cruise | 4      |    
 | Tankers | 5      |   
 
- We are provided with 6252 images in train and 2680 images in test data. Further, this is an imbalanced dataset, so some classes have like Cruise have very few images.
+ We are provided with 6252 images in train and 2680 images in test data. You can download the dataset [here](https://www.kaggle.com/arpitjain007/game-of-deep-learning-ship-datasets). I have shared the notebooks on kaggle. You can easily fork and run the notebook to get started quickly (recommended). If you decided to run locally, you may need to replicate the folder structure.
+
  I mainly used fastai and Keras for my experiments. I used kaggle kernels which i will be publicly sharing. The notebooks directory contains the ipynb notebooks which you can download and run on your PC (you may have to replicate the folder structure). The python directory contains notebook code imported as python file.
 
 My final confusion matrix:
@@ -56,11 +57,19 @@ You can go for training a second level model based on the OOF (out of fold) pred
 4. Inception V3, EB3 don't seem to give good performance.
 
 # The Notebooks
-The repo currently contains the following notebooks. I will keep adding some other notebooks in the coming days.
+The repo currently contains the following notebooks. 
+
 1. av-gameofdl-fastai-resnet101
-This is a simple notebook which trains resnet 101 using fastai library. On the public LB it gets score of 0.972.
+This is a simple notebook which trains resnet 101 using fastai library.
+You can easily run the notebook on [kaggle](https://www.kaggle.com/meaninglesslives/av-gameofdl-fastai-resnet101).
+
+
 2. av-gameofdl-keras-resnet101-albutfms-bce
 In this notebook i use pretrained Resnet 101 in Keras. I use SWA, Augmentation and Cosine Annealing to improve the performance.
+You can easily run the notebook on [kaggle](https://www.kaggle.com/meaninglesslives/av-gameofdl-keras-resnet101-albutfms-bce).
+
 3. av-gameofdl-keras-eb0-albutfms-bce
 Recently Google unveiled EfficientNet which has fewer parameters but achieves SOTA accuracy in many many datasets. I was curious to see if EfficientNet works on this dataset. The answer is an emphatic YES. It works beautifully and trains very fast. In this notebook you can see my experiment with the EB0 model. Google still hasn't provided pretrained model weights for their best performing model (EB7). Can't wait to check the performance of EB7.
+You can easily run the notebook on [kaggle](https://www.kaggle.com/meaninglesslives/av-gameofdl-keras-eb0-albutfms-bce).
+
 
